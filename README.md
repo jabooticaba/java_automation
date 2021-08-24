@@ -1,2 +1,2 @@
-# Java Automation QA project
+# Java Automation QA Project
 Antara Internship 2021
