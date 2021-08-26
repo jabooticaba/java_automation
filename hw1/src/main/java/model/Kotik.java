@@ -23,6 +23,5 @@ public class Kotik {
         this.prettiness = prettiness;
         this.name = name;
         this.meow = meow;
-
     }
 }
