@@ -4,7 +4,7 @@ package model;
 public class Kotik {
 
     private static int counter;
-    private int fullness = 5;
+    private int fullness = 0;
     private int weight;
     private int prettiness;
     private String name;
@@ -15,8 +15,10 @@ public class Kotik {
     public Kotik() {}
 
     public Kotik(int weight, int prettiness, String name, String meow){
-        this.weight = weight; this.prettiness = prettiness;
-        this.name = name; this.meow = meow;
+        this.weight = weight;
+        this.prettiness = prettiness;
+        this.name = name;
+        this.meow = meow;
     }
 
     public void setKotik(int weight, int prettiness, String name, String meow){
