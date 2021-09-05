@@ -1,6 +1,13 @@
 package animals;
 
+import custom.Size;
+
 public class Duck extends Herbivore implements Fly, Sweem, Voice {
+
+    public Duck(){
+        this.animalSize = Size.SMALL;
+    }
+
 
     public void fly() {
         System.out.println("Уточка летит");
