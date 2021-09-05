@@ -12,7 +12,7 @@ public abstract class Animal {
     private String name = faker.name().firstName();
     protected Size animalSize;
 
-    public void eat(Food food){
+    public void eat(Food food){ //Нужно ли добавлять throws WrongFoodException?
         System.out.println("Ест");
     }
 

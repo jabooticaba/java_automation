@@ -5,9 +5,8 @@ import custom.Size;
 
 public class Paddock <T extends Animal> {
 
-    private Set<T> set = new HashSet<T>();
     private Size paddockSize;
-
+    private Set<T> set = new HashSet<T>();
     public void setSize(Size size){
         paddockSize = size;
     }
@@ -20,7 +19,7 @@ public class Paddock <T extends Animal> {
         if (animal.getSize() <= paddockSize.getValue()){
             set.add(animal);
         }else{
-            System.out.println(animal.getName() + " : животное не помещается в вольер");
+            System.out.println(animal.getName() + ": животное не помещается в вольер");
         }
     }
 
@@ -28,21 +27,14 @@ public class Paddock <T extends Animal> {
         set.remove(animal);
     }
 
-//    public int getHash(String name) {
-//        Iterator iterator = set.iterator();
-//        while (iterator.hasNext()){
-//            if (iterator.equals(name)) {
-//                return iterator.hashCode();
-//            }
-//            iterator.next();
-//
-//        }
-//        return 0;
-//    }
-
-
-    public String getSet(){
-        return set.toString();
-    }  //метод для отладки
-
+    public int getHash(String name) {
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            int i = iterator.next().hashCode();
+            if (i == Objects.hash(name)) {
+                return i;
+            }
+        }
+        return 0;
+    }
 }
