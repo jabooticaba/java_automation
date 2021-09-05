@@ -51,58 +51,58 @@ public class Kotik {
     }
 
     public boolean sleep(){
-        if (!isStarving()) {
-            System.out.println("Спит");
-            starve(1);
-            return true;
-        }else {
+        if (isStarving()) {
             System.out.print("Котик хочет есть. ");
             return false;
         }
+
+        System.out.println("Спит");
+        starve(1);
+        return true;
     }
 
     public boolean purr(){
-        if (!isStarving()) {
-            System.out.println("Мурчит");
-            starve(1);
-            return true;
-        }else {
+        if (isStarving()) {
             System.out.print("Котик хочет есть. ");
             return false;
         }
+
+        System.out.println("Мурчит");
+        starve(1);
+        return true;
     }
 
     public boolean play(){
-        if (!isStarving()) {
-            System.out.println("Играет");
-            starve(2);
-            return true;
-        }else {
+        if (isStarving()) {
             System.out.print("Котик хочет есть. ");
             return false;
         }
+
+        System.out.println("Играет");
+        starve(2);
+        return true;
     }
 
     public boolean chaseMouse(){
-        if (!isStarving()) {
-            System.out.println("Преследует мышь");
-            starve(3);
-            return true;
-        }else {
+        if (isStarving()) {
             System.out.print("Котик хочет есть. ");
             return false;
         }
+
+        System.out.println("Преследует мышь");
+        starve(3);
+        return true;
     }
 
     public boolean lookingOutWindow(){
-        if (!isStarving()) {
-            System.out.println("Смотрит в окно");
-            starve(1);
-            return true;
-        }else {
+        if (isStarving()) {
             System.out.print("Котик хочет есть. ");
             return false;
         }
+
+        System.out.println("Смотрит в окно");
+        starve(1);
+        return true;
     }
 
     public void liveAnotherDay() {
