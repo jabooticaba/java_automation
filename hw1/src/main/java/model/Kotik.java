@@ -4,13 +4,13 @@ package model;
 public class Kotik {
 
     private static int counter;
-    private int fullness = 0;
+    private int fullness = 3;
     private int weight;
     private int prettiness;
     private String name;
     private String meow;
 
-    {counter++;} // Так как конструкторов несколько, выбрал этот способ подсчета объектов класса
+    {counter++;}
 
     public Kotik() {}
 
@@ -28,13 +28,13 @@ public class Kotik {
         this.meow = meow;
     }
 
-    public int getFullness(){
-        return fullness;
+    public boolean isStarving(){
+        return fullness <= 0;
     }
 
     public void eat(int x){
-    fullness += x;
-    System.out.println("Скушал " + x + " кусочков еды");
+        fullness += x;
+        System.out.println("Скушал " + x + " кусочков еды");
     }
 
     public void eat(int x, String y){
@@ -46,58 +46,66 @@ public class Kotik {
         eat (5, "мясо");
     }
 
+    public void starve(int x){
+        fullness -= x;
+    }
 
     public boolean sleep(){
-        if (fullness > 0) {
+        if (!isStarving()) {
             System.out.println("Спит");
+            starve(1);
             return true;
         }else {
-            System.out.println("Котик хочет есть");
+            System.out.print("Котик хочет есть. ");
             return false;
         }
     }
 
     public boolean purr(){
-        if (fullness > 0) {
+        if (!isStarving()) {
             System.out.println("Мурчит");
+            starve(1);
             return true;
         }else {
-            System.out.println("Котик хочет есть");
+            System.out.print("Котик хочет есть. ");
             return false;
         }
     }
 
     public boolean play(){
-        if (fullness > 0) {
+        if (!isStarving()) {
             System.out.println("Играет");
+            starve(2);
             return true;
         }else {
-            System.out.println("Котик хочет есть");
+            System.out.print("Котик хочет есть. ");
             return false;
         }
     }
 
     public boolean chaseMouse(){
-        if (fullness > 0) {
+        if (!isStarving()) {
             System.out.println("Преследует мышь");
+            starve(3);
             return true;
         }else {
-            System.out.println("Котик хочет есть");
+            System.out.print("Котик хочет есть. ");
             return false;
         }
     }
 
     public boolean lookingOutWindow(){
-        if (fullness > 0) {
+        if (!isStarving()) {
             System.out.println("Смотрит в окно");
+            starve(1);
             return true;
         }else {
-            System.out.println("Котик хочет есть");
+            System.out.print("Котик хочет есть. ");
             return false;
         }
     }
 
-    public void liveAnotherDay() {  //Не придумал, как сократить конструкцию!
+    public void liveAnotherDay() {
         for (int i = 0; i < 24; ++i) {
             switch ((int) (Math.random() * 5 + 1)) {
                 case 1:
