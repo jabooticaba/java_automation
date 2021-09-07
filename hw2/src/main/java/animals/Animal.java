@@ -4,7 +4,5 @@ import food.Food;
 
 public abstract class Animal {
 
-    public void eat(Food food){
-        System.out.println("Ест");
-    }
+    public abstract void eat(Food food);
 }

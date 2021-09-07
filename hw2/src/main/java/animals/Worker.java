@@ -8,15 +8,8 @@ public class Worker {
         animal.eat(food);
     }
 
-    public <T extends Animal & Voice> void getVoice(T animal) {
-        System.out.println(animal.voice());
-    }
-
-    /* Возможно этот метод подойдет лучше (не такой избыточный):
-
     public void getVoice (Voice animal){
         System.out.println(animal.voice());
     }
-     */
 
 }

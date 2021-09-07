@@ -1,9 +1,9 @@
 package animals;
 
 
-public class Fish extends Carnivorus implements Sweem{
+public class Fish extends Carnivorus implements Swim {
 
-    public void sweem() {
+    public void swim() {
         System.out.println("Рыба плещется");
     }
 }

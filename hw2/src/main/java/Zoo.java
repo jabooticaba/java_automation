@@ -23,14 +23,10 @@ public class Zoo {
         worker.getVoice(duck1);
         worker.feed(horse, new Fruits());
 
-        Sweem[] pond = new Sweem[4];
-        pond[0] = duck1;
-        pond[2] = duck2;
-        pond[1] = fish1;
-        pond[3] = fish2;
+        Swim[] pond = {duck1, duck2, fish1, fish2};
 
         for (int i = 0; i < pond.length; i++){
-            pond[i].sweem();
+            pond[i].swim();
         }
     }
 }

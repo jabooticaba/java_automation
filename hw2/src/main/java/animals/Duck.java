@@ -1,12 +1,12 @@
 package animals;
 
-public class Duck extends Herbivore implements Fly, Sweem, Voice {
+public class Duck extends Herbivore implements Fly, Swim, Voice {
 
     public void fly() {
         System.out.println("Уточка летит");
     }
 
-    public void sweem() {
+    public void swim() {
         System.out.println("Уточка плывёт");
     }
 
