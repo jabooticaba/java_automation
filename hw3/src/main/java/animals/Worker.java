@@ -1,22 +1,19 @@
 package animals;
 
+import custom.WrongFoodException;
 import food.Food;
 
 public class Worker {
 
     public void feed(Animal animal, Food food){
-        animal.eat(food);
+        try {
+            animal.eat(food);
+        }catch (WrongFoodException e){
+            System.out.println(e.getLocalizedMessage());
+        }
     }
-
-    public <T extends Animal & Voice> void getVoice(T animal) {
-        System.out.println(animal.voice());
-    }
-
-    /* Возможно этот метод подойдет лучше (не такой избыточный):
 
     public void getVoice (Voice animal){
         System.out.println(animal.voice());
     }
-     */
-
 }

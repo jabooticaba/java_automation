@@ -1,7 +1,10 @@
 package animals;
 
 import com.github.javafaker.Faker;
+import custom.WrongFoodException;
 import food.Food;
+
+import java.lang.ref.WeakReference;
 import java.util.Objects;
 import custom.Size;
 
@@ -12,9 +15,7 @@ public abstract class Animal {
     private String name = faker.name().firstName();
     protected Size animalSize;
 
-    public void eat(Food food){ //Нужно ли добавлять throws WrongFoodException?
-        System.out.println("Ест");
-    }
+    abstract public void eat(Food food) throws WrongFoodException;
 
     public void setName(String name){
         this.name = name;
